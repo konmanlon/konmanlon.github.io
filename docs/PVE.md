@@ -35,6 +35,7 @@ find /sys/kernel/iommu_groups/ -type l
 ```
 
 > 参阅文档：
+> - https://pve.proxmox.com/wiki/Pci_passthrough
 > - https://pve.proxmox.com/wiki/PCI(e)_Passthrough#qm_pci_passthrough_update_initramfs
 
 

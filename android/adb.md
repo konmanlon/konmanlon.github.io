@@ -27,7 +27,7 @@
    setprop persist.adb.tcp.port ""
    ```
 
-   
+   >如果连接 USB 调试后，出现无法使用 TCP 连接 adb 时（表现为连接拒绝等，可能端口被关闭），可尝试重启手机恢复
 
 adb 常用命令：
 

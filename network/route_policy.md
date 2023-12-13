@@ -53,6 +53,19 @@ iptables -t nat -A POSTROUTING -s 172.31.0.0/24 -j MASQUERADE
 
 
 
+示例：基于应用 gid 的策略路由
+
+```bash
+# 匹配 gid 并设置 mark
+iptables -t mangle -A OUTPUT -p tcp -m owner --gid-owner 113 -j MARK --set-xmark 7
+iptables -t mangle -A OUTPUT -p udp -m owner --gid-owner 113 -j MARK --set-xmark 7
+
+ip route add default via 192.168.0.111 dev enp6s18 table 107
+ip rule add fwmark 7 table 107
+```
+
+
+
 待解决的问题：
 
 - pve 网卡与 pve 虚拟机网卡网关延迟问题
